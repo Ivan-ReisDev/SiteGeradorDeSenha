@@ -101,7 +101,7 @@ h1 {
     margin-bottom: 10px;
 }
 .valor {
-    width: 80%;    
+    width: 100%;    
 }
 
 .personalizarBaixo {
@@ -157,7 +157,14 @@ input:checked{
     background-color: #0650a5;
 }
 
+  .top {
+    width: 80%;
+  }
   
-  
+  .top h3 {
+    font-weight: normal;
+    font-size: 15px;
+    color: rgb(148, 148, 148) ;
+  }
 
 
