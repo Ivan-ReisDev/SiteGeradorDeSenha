@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt=br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"rel="stylesheet">
+    <link rel="stylesheet" href="src/css/style.css">
+    <title>Gerador de Senha</title>
+</head>
+
+<body>
+    <div class="meio">
+        <div class="topo">
+            <h1>Gerador de Senhas</h1>
+            <p>Utilize o nosso gerador para criar uma senha forte e segura.</p>
+        </div>
+
+        <div class="principal ">
+            <div class="SenhaGerada">
+                <p class="senha">Gere sua senha e escolha,</p>
+                <div>
+                    <button><i class="fa-regular fa-copy"></i></button>
+                    <button><i class="fa-solid fa-arrows-rotate"></i></button>
+                </div>
+                
+
+            </div>
+            <div class="personalizar">
+                <div class="personalizartop">
+                    <h2>Personalizar</h2>
+                </div>
+                <div class="personalizarBaixo">
+                    <input class="valor" type="range" max="50" min="8">
+                    <div class="personalizarInterno">
+                        <div>
+                            <input type="checkbox" class="checkbox" id="numeros">
+                            <label for="numeros">Números</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" class="checkbox" id="especial">
+                            <label for="especial">Símbolos</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="btn">Copiar senha</button>
+    </div>
+    <script src="https://kit.fontawesome.com/a838236c7b.js" crossorigin="anonymous"></script>
+    <script src="src/js/app.js"></script>
+</body>
+
+</html>
