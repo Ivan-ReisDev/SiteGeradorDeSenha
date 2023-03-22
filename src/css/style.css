@@ -110,7 +110,6 @@ h1 {
 }
 
 .personalizarInterno {
-    
     padding-left: 10px;
     display: flex;
     flex-direction: column;
@@ -159,6 +158,7 @@ input:checked{
 
   .top {
     width: 80%;
+
   }
   
   .top h3 {
@@ -167,4 +167,31 @@ input:checked{
     color: rgb(148, 148, 148) ;
   }
 
+  .senha {
+    font-size: 19px;
+    width: 80%;
+    height: 35px;
+    border: none;
+  }
 
+  @media (max-width: 633px) {
+    .principal {
+        width: 500px;
+        
+    }
+  }
+
+  @media (max-width: 500px) {
+    .principal {
+        width: 350px;
+        
+    }
+
+    .SenhaGerada div {
+        display: flex;
+    }
+
+    .SenhaGerada input {
+        width: 75%;
+    }
+  }
