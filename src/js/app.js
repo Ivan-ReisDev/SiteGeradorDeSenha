@@ -5,6 +5,8 @@ var $numeros = document.querySelector('#numeros');
 var $especial = document.querySelector('#especial');
 var $update = document.querySelector('.update');
 var $span = document.querySelector('span');
+var $copy = document.querySelector('.copy');
+var $btn = document.querySelector('.btn');
 var letras = ['a', 'q', 'w', 'r', 't', 'y', 'y', 'i', 'o', 'p', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'z', 'x', 'v', 'b', 'c', 'm', 'A', 'Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L', 'Z', 'X', 'C', 'V', 'B','N','M']
 var numeros = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 var especial = ['!', '@', '#', '$', '%', '&', '(', ')', '-', '_']
@@ -27,43 +29,47 @@ function GeraNumero() {
 }
 
 function GerarsenhaLetra() {
-    $p.innerHTML = ''
+    $p.value = ''
     for (let i = 0; i < $tamanhoSenha.value; i++) {
-        $p.innerHTML += letras[GeraNumero()]
+        $p.value += letras[GeraNumero()]
     }
 }
 
 function GeraSenhaNumero() {
-    $p.innerHTML = ''
+    $p.value = ''
     for (let i = 0; i < $tamanhoSenha.value; i++) {
-        $p.innerHTML += LetraNumero[GeraNumero()]
+        $p.value += LetraNumero[GeraNumero()]
     }
 }
 
 function GerarSenhaLetraNumero() {
-    $p.innerHTML = ''
+    $p.value = ''
     for (let i = 0; i < $tamanhoSenha.value; i++) {
-        $p.innerHTML += letras[GeraNumero()]
+        $p.value += letras[GeraNumero()]
     }
 }
 
 function GerarSenhaNumeroEspecial() {
-    $p.innerHTML = ''
+    $p.value = ''
     for (let i = 0; i < $tamanhoSenha.value; i++) {
-        $p.innerHTML += NumeroEspecial[GeraNumero()]
+        $p.value += NumeroEspecial[GeraNumero()]
     }
 }
 
 function GerarSenhaEspecial() {
-    $p.innerHTML = ''
+    $p.value = ''
     for (let i = 0; i < $tamanhoSenha.value; i++) {
-        $p.innerHTML += LetrasEspecial[GeraNumero()]
+        $p.value += LetrasEspecial[GeraNumero()]
     }
 }
 
+function copy() {
+    navigator.clipboard.writeText($senha.value).then(() => {
+        alert('Senha copiada.')
+    }) }
+
 $tamanhoSenha.addEventListener('change', () => {
     $span.innerHTML = $tamanhoSenha.value;
-
     if ($numeros.checked == true & $especial.checked == true) {
         GerarSenhaNumeroEspecial()
     } else if ($especial.checked == true & $numeros.checked == false) {
@@ -85,4 +91,12 @@ $update.addEventListener('click',() => {
     } else {
         GerarsenhaLetra()
     }
+})
+
+$copy.addEventListener('click', () => {
+    copy()
+})
+
+$btn.addEventListener('click', () => {
+    copy()
 })
